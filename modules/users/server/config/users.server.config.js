@@ -4,7 +4,6 @@
  * Module dependencies
  */
 var passport = require('passport'),
-  User = require('mongoose').model('User'),
   path = require('path'),
   config = require(path.resolve('./config/config'));
 
@@ -18,13 +17,13 @@ module.exports = function (app, db) {
   });
 
   // Deserialize sessions
-  passport.deserializeUser(function (id, done) {
-    User.findOne({
-      _id: id
-    }, '-salt -password', function (err, user) {
-      done(err, user);
-    });
-  });
+  // passport.deserializeUser(function (id, done) {
+  //   User.findOne({
+  //     _id: id
+  //   }, '-salt -password', function (err, user) {
+  //     done(err, user);
+  //   });
+  // });
 
   // Initialize strategies
   config.utils.getGlobbedPaths(path.join(__dirname, './strategies/**/*.js')).forEach(function (strategy) {

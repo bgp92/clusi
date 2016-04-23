@@ -9,7 +9,6 @@ var config = require('../config'),
   logger = require('./logger'),
   bodyParser = require('body-parser'),
   session = require('express-session'),
-  MongoStore = require('connect-mongo')(session),
   favicon = require('serve-favicon'),
   compress = require('compression'),
   methodOverride = require('method-override'),
@@ -106,7 +105,7 @@ module.exports.initViewEngine = function (app) {
  * Configure Express session
  */
 module.exports.initSession = function (app, db) {
-  // Express MongoDB session storage
+  // Express MemoryStore
   app.use(session({
     saveUninitialized: true,
     resave: true,
@@ -116,24 +115,11 @@ module.exports.initSession = function (app, db) {
       httpOnly: config.sessionCookie.httpOnly,
       secure: config.sessionCookie.secure && config.secure.ssl
     },
-    key: config.sessionKey,
-    store: new MongoStore({
-      mongooseConnection: db.connection,
-      collection: config.sessionCollection
-    })
+    key: config.sessionKey
   }));
 
   // Add Lusca CSRF Middleware
   app.use(lusca(config.csrf));
-};
-
-/**
- * Invoke modules server configuration
- */
-module.exports.initModulesConfiguration = function (app, db) {
-  config.files.server.configs.forEach(function (configPath) {
-    require(path.resolve(configPath))(app, db);
-  });
 };
 
 /**
@@ -168,16 +154,6 @@ module.exports.initModulesClientRoutes = function (app) {
 };
 
 /**
- * Configure the modules ACL policies
- */
-module.exports.initModulesServerPolicies = function (app) {
-  // Globbing policy files
-  config.files.server.policies.forEach(function (policyPath) {
-    require(path.resolve(policyPath)).invokeRolesPolicies();
-  });
-};
-
-/**
  * Configure the modules server routes
  */
 module.exports.initModulesServerRoutes = function (app) {
@@ -206,17 +182,6 @@ module.exports.initErrorRoutes = function (app) {
 };
 
 /**
- * Configure Socket.io
- */
-module.exports.configureSocketIO = function (app, db) {
-  // Load the Socket.io configuration
-  var server = require('./socket.io')(app, db);
-
-  // Return server object
-  return server;
-};
-
-/**
  * Initialize the Express application
  */
 module.exports.init = function (db) {
@@ -241,20 +206,11 @@ module.exports.init = function (db) {
   // Initialize Express session
   this.initSession(app, db);
 
-  // Initialize Modules configuration
-  this.initModulesConfiguration(app);
-
-  // Initialize modules server authorization policies
-  this.initModulesServerPolicies(app);
-
   // Initialize modules server routes
   this.initModulesServerRoutes(app);
 
   // Initialize error routes
   this.initErrorRoutes(app);
-
-  // Configure Socket.io
-  app = this.configureSocketIO(app, db);
 
   return app;
 };
