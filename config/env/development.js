@@ -3,15 +3,6 @@
 var defaultEnvConfig = require('./default');
 
 module.exports = {
-  // db: {
-  //   uri: process.env.MONGOHQ_URL || process.env.MONGOLAB_URI || 'mongodb://' + (process.env.DB_1_PORT_27017_TCP_ADDR || 'localhost') + '/mean-dev',
-  //   options: {
-  //     user: '',
-  //     pass: ''
-  //   },
-  //   // Enable mongoose debug mode
-  //   debug: process.env.MONGODB_DEBUG || false
-  // },
   db: {
     host: 'aws-us-east-1-portal.8.dblayer.com', // server name or IP address;
     port: 10131,

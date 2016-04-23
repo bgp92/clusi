@@ -10,7 +10,7 @@ var config = require('../config'),
 
 
 module.exports.loadModels = function (callback) {
-
+  // No writing permissions, no models needed
 };
 
 // Initialize Postgres
@@ -20,9 +20,7 @@ module.exports.connect = function (cb) {
 
   db.connect()
     .then(function (obj) {
-      // if (cb) cb(db);
       if (cb) {
-        console.log(chalk.green('HAY CALLBACK WEOOOOON'));
         cb(db);
       }
       console.log(chalk.green('Could connect to Postgres Database'));

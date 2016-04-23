@@ -4,8 +4,6 @@
  * Module dependencies.
  */
 var config = require('../config'),
-  // mongoose = require('./mongoose'),
-  // pgp = require('pg-promise')(),
   postgres = require('./postgres'),
   express = require('./express'),
   chalk = require('chalk');
@@ -18,26 +16,6 @@ var config = require('../config'),
 // };
 
 module.exports.init = function init(callback) {
-  // mongoose.connect(function (db) {
-  //   // Initialize express
-  //   var app = express.init(db);
-  //   if (callback) callback(app, db, config);
-
-  // });
-  // 00000000
-  // var db = pgp(config.db);
-  // console.log('COME PEREJIL PELOTAAS');
-  // console.log(db);
-
-  // seems to be working
-  // db.any("SELECT * FROM reports", true)
-  //   .then(function (data) {
-  //     console.log(data);
-  //   })
-  //   .catch(function (error) {
-  //     console.log(error);
-  //   });
-
 
   postgres.connect(function (db) {
     // Initialize Postgres
