@@ -1,12 +1,11 @@
-[![MEAN.JS Logo](http://meanjs.org/img/logo-small.png)](http://meanjs.org/)
+[![CLUSIANA LOGO](/modules/core/client/img/clusiana.jpg)](Clusiana)
 
-MEAN.JS is a full-stack JavaScript open-source solution, which provides a solid starting point for [MongoDB](http://www.mongodb.org/), [Node.js](http://www.nodejs.org/), [Express](http://expressjs.com/), and [AngularJS](http://angularjs.org/) based applications. The idea is to solve the common issues with connecting those frameworks, build a robust framework to support daily development needs, and help developers use better practices while working with popular JavaScript components.
 
-## Before You Begin
-Before you begin we recommend you read about the basic building blocks that assemble a MEAN.JS application:
-* Express - The best way to understand express is through its [Official Website](http://expressjs.com/), which has a [Getting Started](http://expressjs.com/starter/installing.html) guide, as well as an [ExpressJS](http://expressjs.com/en/guide/routing.html) guide for general express topics. You can also go through this [StackOverflow Thread](http://stackoverflow.com/questions/8144214/learning-express-for-node-js) for more resources.
-* AngularJS - Angular's [Official Website](http://angularjs.org/) is a great starting point. You can also use [Thinkster Popular Guide](http://www.thinkster.io/), and [Egghead Videos](https://egghead.io/).
-* Node.js - Start by going through [Node.js Official Website](http://nodejs.org/) and this [StackOverflow Thread](http://stackoverflow.com/questions/2353818/how-do-i-get-started-with-node-js), which should get you going with the Node.js platform in no time.
+## Main Tools used for Clusiana
+Before you begin we recommend you read about the basic building blocks that assemble a clusiana application:
+* Express - The best way to understand express is through its [Official Website](http://expressjs.com/)
+* AngularJS - Angular's [Official Website](http://angularjs.org/)
+* Node.js - Start by going through [Node.js Official Website](http://nodejs.org/) 
 
 
 ## Prerequisites
@@ -74,7 +73,7 @@ $ grunt prod
 * explore `config/env/production.js` for production environment configuration options
 
 ## Testing Your Application
-You can run the full test suite included with MEAN.JS with the test task:
+You can run the full test suite included with Clusiana with the test task:
 
 ```bash
 $ grunt test
@@ -125,7 +124,7 @@ $ gulp prod
 ```
 
 ### Testing Your Application with Gulp
-Using the full test suite included with MEAN.JS with the test task:
+Using the full test suite included with Clusiana with the test task:
 
 ### Run all tests
 ```bash
@@ -159,15 +158,14 @@ $ docker-compose up
 
 * Local development and testing with just Docker:
 ```bash
-$ docker build -t mean .
-$ docker run -p 27017:27017 -d --name db mongo
-$ docker run -p 3000:3000 --link db:db_1 mean
+$ docker build -t clusiana .
+$ docker run -p 3000:3000 --link db:db_1 clusiana
 $
 ```
 
 * To enable live reload, forward port 35729 and mount /app and /public as volumes:
 ```bash
-$ docker run -p 3000:3000 -p 35729:35729 -v /Users/mdl/workspace/mean-stack/mean/public:/home/mean/public -v /Users/mdl/workspace/mean-stack/mean/app:/home/mean/app --link db:db_1 mean
+$ docker run -p 3000:3000 -p 35729:35729 -v /Users/mdl/workspace/clusiana-stack/clusiana/public:/home/clusiana/public -v /Users/mdl/workspace/clusiana-stack/clusiana/app:/home/clusiana/app --link db:db_1 clusiana
 ```
 
 ## License
