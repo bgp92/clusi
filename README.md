@@ -1,4 +1,4 @@
-[![CLUSIANA LOGO](http://i.imgur.com/cHcsgmX.jpg)](Clusiana)
+[![CLUSIANA LOGO](http://i.imgur.com/cHcsgmX.jpg?2)](Clusiana)
 
 
 ## Main Tools used for Clusiana
