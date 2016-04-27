@@ -5,24 +5,15 @@
     .module('users')
     .controller('ChangeProfilePictureController', ChangeProfilePictureController);
 
-  ChangeProfilePictureController.$inject = ['$scope', '$timeout', '$window', 'Authentication', 'FileUploader'];
+  ChangeProfilePictureController.$inject = ['$scope', '$timeout', '$window'];
 
-  function ChangeProfilePictureController($scope, $timeout, $window, Authentication, FileUploader) {
+  function ChangeProfilePictureController($scope, $timeout, $window) {
     var vm = this;
 
-    vm.user = Authentication.user;
     vm.imageURL = vm.user.profileImageURL;
     vm.uploadProfilePicture = uploadProfilePicture;
 
     vm.cancelUpload = cancelUpload;
-    // Create file uploader instance
-    vm.uploader = new FileUploader({
-      url: 'api/users/picture',
-      alias: 'newProfilePicture',
-      onAfterAddingFile: onAfterAddingFile,
-      onSuccessItem: onSuccessItem,
-      onErrorItem: onErrorItem
-    });
 
     // Set file uploader image filter
     vm.uploader.filters.push({
@@ -51,9 +42,6 @@
     function onSuccessItem(fileItem, response, status, headers) {
       // Show success message
       vm.success = true;
-
-      // Populate user object
-      vm.user = Authentication.user = response;
 
       // Clear upload buttons
       cancelUpload();

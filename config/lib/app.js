@@ -8,13 +8,6 @@ var config = require('../config'),
   express = require('./express'),
   chalk = require('chalk');
 
-// Initialize Models
-// mongoose.loadModels();
-
-// module.exports.loadModels = function loadModels() {
-//   mongoose.loadModels();
-// };
-
 module.exports.init = function init(callback) {
 
   postgres.connect(function (db) {
@@ -41,9 +34,9 @@ module.exports.start = function start(callback) {
       console.log(chalk.green('Environment:     ' + process.env.NODE_ENV));
       console.log(chalk.green('Server:          ' + server));
       console.log(chalk.green('Database:        ' + config.db.host));
-      console.log(chalk.green('App version:     ' + config.meanjs.version));
-      if (config.meanjs['meanjs-version'])
-        console.log(chalk.green('MEAN.JS version: ' + config.meanjs['meanjs-version']));
+      console.log(chalk.green('App version:     ' + config.clusiana.version));
+      if (config.clusiana['clusiana-version'])
+        console.log(chalk.green('CLUSIANA version: ' + config.clusiana['clusiana-version']));
       console.log('--');
 
       if (callback) callback(app, db, config);

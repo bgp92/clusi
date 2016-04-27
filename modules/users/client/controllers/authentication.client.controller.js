@@ -5,13 +5,12 @@
     .module('users')
     .controller('AuthenticationController', AuthenticationController);
 
-  AuthenticationController.$inject = ['$scope', '$state', '$http', '$location', '$window', 'Authentication', 'PasswordValidator'];
+  AuthenticationController.$inject = ['$scope', '$state', '$http', '$location', '$window', 'Authentication'];
 
-  function AuthenticationController($scope, $state, $http, $location, $window, Authentication, PasswordValidator) {
+  function AuthenticationController($scope, $state, $http, $location, $window, Authentication) {
     var vm = this;
 
     vm.authentication = Authentication;
-    vm.getPopoverMsg = PasswordValidator.getPopoverMsg;
     vm.signin = signin;
     vm.callOauthProvider = callOauthProvider;
 

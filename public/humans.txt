@@ -3,11 +3,11 @@
 
 # TEAM
 
-    <name> -- <role> -- <twitter>
+    <Benjamin Pinaya> -- <Fullstack> -- <bpinaya>
 
 # THANKS
 
-    <name>
+    <Tulip>
 
 # TECHNOLOGY COLOPHON
 

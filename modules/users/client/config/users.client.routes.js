@@ -37,15 +37,6 @@
         controller: 'AuthenticationController',
         controllerAs: 'vm'
       })
-      .state('authentication.signin', {
-        url: '/signin?err',
-        templateUrl: 'modules/users/client/views/authentication/signin.client.view.html',
-        controller: 'AuthenticationController',
-        controllerAs: 'vm',
-        data: {
-          pageTitle: 'Signin'
-        }
-      })
       .state('password', {
         abstract: true,
         url: '/password',

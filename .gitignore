@@ -16,7 +16,7 @@ app/tests/coverage/
 .idea/
 coverage/
 
-# MEAN.js app and assets
+# Clusiana app and assets
 # ======================
 public/dist/
 uploads
@@ -25,7 +25,7 @@ config/env/local.js
 config/env/local-*.js
 *.pem
 
-# Ignoring MEAN.JS's gh-pages branch for documenation
+# Ignoring Clusiana's gh-pages branch for documenation
 _site/
 
 # General
@@ -47,29 +47,3 @@ build/
 .sublime-project
 *.sublime-project
 *.sublime-workspace
-
-# Eclipse project files
-# =====================
-.project
-.settings/
-.*.md.html
-.metadata
-*~.nib
-local.properties
-
-# IntelliJ
-# ========
-*.iml
-
-# Cloud9 IDE
-# =========
-.c9/
-data/
-mongod
-
-# Visual Studio
-# =========
-*.suo
-*.ntvs*
-*.njsproj
-*.sln

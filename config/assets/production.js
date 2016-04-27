@@ -5,9 +5,7 @@ module.exports = {
     lib: {
       css: [
         // bower:css
-        'public/lib/bootstrap/dist/css/bootstrap.min.css',
-        'public/lib/bootstrap/dist/css/bootstrap-theme.min.css'
-        // endbower
+        'public/css/bootstrap.min.css'
       ],
       js: [
         // bower:js

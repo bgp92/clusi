@@ -4,10 +4,8 @@ module.exports = {
   client: {
     lib: {
       css: [
-        // bower:css
-        'public/lib/bootstrap/dist/css/bootstrap.css',
-        'public/lib/bootstrap/dist/css/bootstrap-theme.css'
-        // endbower
+        // We use our own bootstrap with some theme added
+        'public/css/bootstrap.css'
       ],
       js: [
         // bower:js

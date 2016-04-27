@@ -1,7 +1,7 @@
 {
-  "name": "meanjs",
-  "description": "Fullstack JavaScript with MongoDB, Express, AngularJS, and Node.js.",
-  "homepage": "http://meanjs.org/",
+  "name": "Clusiana",
+  "description": "Tulip Assignment Memtracking Platform",
+  "homepage": "http://tulip.co",
   "license": "MIT",
   "dependencies": {
     "angular": "~1.5.0",
@@ -12,7 +12,9 @@
     "angular-mocks": "~1.5.0",
     "angular-resource": "~1.5.0",
     "angular-ui-router": "~0.2.18",
-    "bootstrap": "~3.3.6"
+    "Chart.js": "^2.0.2",
+    "firebase": "^2.4.2",
+    "angularfire": "^1.2.0"
   },
   "overrides": {
     "bootstrap": {
